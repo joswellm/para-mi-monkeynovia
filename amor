@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas del Destino</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .card {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Las Cartas del Destino!</h1>
+    <div class="container">
+        <div class="card" onmouseover="showText(0)">💌</div>
+        <div class="card" onmouseover="showText(1)">💌</div>
+        <div class="card" onmouseover="showText(2)">💌</div>
+        <div class="card" onmouseover="showText(3)">💌</div>
+    </div>
+    <h2 id="message" class="hidden"></h2>
+    <script>
+        const messages = [
+            "Eres la razón de mi felicidad ❤️",
+            "Cada día contigo es un regalo 🎁",
+            "Tu sonrisa ilumina mi vida ✨",
+            "¿Quieres ser mi San Valentín? 💌"
+        ];
+
+        function showText(index) {
+            const message = document.getElementById("message");
+            message.textContent = messages[index];
+            message.classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
